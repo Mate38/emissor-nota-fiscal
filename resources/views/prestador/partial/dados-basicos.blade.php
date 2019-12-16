@@ -2,7 +2,7 @@
     <div class="col-md-6">
         <div class="form-group">
             <label for="cpfCnpj">CPF ou CNPJ *</label>
-            <input type="text" class="form-control" name="cpfCnpj" value="{{ $prestador->cpfCnpj ?? null}}" required>
+            <input type="text" class="form-control cpf_cnpj" name="cpfCnpj" value="{{ $prestador->cpfCnpj ?? null}}" required>
             @include('partial.form-error', ['nome' => 'cpfCnpj'])
         </div>
     </div>
@@ -19,14 +19,14 @@
     <div class="col-md-6">
         <div class="form-group">
             <label for="telefone[ddd]">Código de área *</label>
-            <input type="number" class="form-control cnpj" name="telefone[ddd]" value="{{ $prestador->telefone->ddd ?? null}}" required>
+            <input type="text" class="form-control telefone_ddd" name="telefone[ddd]" value="{{ $prestador->telefone->ddd ?? null}}" required>
             @include('partial.form-error', ['nome' => 'telefone.ddd'])
         </div>
     </div>
     <div class="col-md-6">
         <div class="form-group">
             <label for="telefone[numero]">Número do telefone *</label>
-            <input type="number" class="form-control" name="telefone[numero]" value="{{ $prestador->telefone->numero ?? null}}" required>
+            <input type="text" class="form-control telefone_numero" name="telefone[numero]" value="{{ $prestador->telefone->numero ?? null}}" required>
             @include('partial.form-error', ['nome' => 'telefone.numero'])
         </div>
     </div>

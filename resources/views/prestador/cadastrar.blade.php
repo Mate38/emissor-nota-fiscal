@@ -25,3 +25,25 @@
 
 </form>
 @endsection
+
+@section('scripts')
+<script>
+    // Mascara de CPF e CNPJ
+    var CpfCnpjMaskBehavior = function (val) {
+                return val.replace(/\D/g, '').length <= 11 ? '000.000.000-009' : '00.000.000/0000-00';
+            },
+        cpfCnpjpOptions = {
+            onKeyPress: function(val, e, field, options) {
+            field.mask(CpfCnpjMaskBehavior.apply({}, arguments), options);
+        }
+    };
+
+    $(document).ready(function(){
+        $('.cep').mask('00000-000');
+        $('.telefone_numero').mask('00000-0000');
+        $('.telefone_ddd').mask('(00)');      
+        $('.codigo_cidade').mask('0000000');      
+        $('.cpf_cnpj').mask(CpfCnpjMaskBehavior, cpfCnpjpOptions);
+    });
+</script>
+@endsection

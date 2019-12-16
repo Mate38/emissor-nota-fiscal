@@ -30,7 +30,6 @@
 
         @yield('styles')
 
-
         @yield('scripts')
 
     </body>

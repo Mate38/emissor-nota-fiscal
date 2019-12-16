@@ -63,7 +63,7 @@
     <div class="col-md-6">
         <div class="form-group">
             <label for="endereco[codigoCidade]">Código da cidade *</label>
-            <input type="text" class="form-control" name="endereco[codigoCidade]" value="{{ $prestador->endereco->codigoCidade ?? null}}" required>
+            <input type="text" class="form-control codigo_cidade" name="endereco[codigoCidade]" value="{{ $prestador->endereco->codigoCidade ?? null}}" required>
             @include('partial.form-error', ['nome' => 'endereco.codigoCidade'])
         </div>
     </div>
@@ -92,7 +92,7 @@
     <div class="col-md-6">
         <div class="form-group">
             <label for="endereco[cep]">CEP *</label>
-            <input type="text" class="form-control" name="endereco[cep]" value="{{ $prestador->endereco->cep ?? null}}" required>
+            <input type="text" class="form-control cep" name="endereco[cep]" value="{{ $prestador->endereco->cep ?? null}}" required>
             @include('partial.form-error', ['nome' => 'endereco.cep'])
         </div>
     </div>
