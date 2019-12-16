@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Endereco;
 use Illuminate\Http\Request;
 use App\Services\PrestadorService;
+use App\Http\Requests\PrestadorRequest;
 use Illuminate\Support\Facades\Session;
 use TecnoSpeed\Plugnotas\Error\RequiredError;
 use TecnoSpeed\Plugnotas\Error\ValidationError;
@@ -34,7 +35,7 @@ class PrestadorController extends Controller
         return view('prestador.cadastrar', compact('tiposLogradouro', 'tiposBairro', 'estados', 'prestador', 'index'));
     }
 
-    public function salvar(Request $request, $cpfCnpj = null, $index = null)
+    public function salvar(PrestadorRequest $request, $cpfCnpj = null, $index = null)
     {
         $dados = $request->all();
         unset($dados['_token']);

@@ -3,12 +3,14 @@
         <div class="form-group">
             <label for="cpfCnpj">CPF ou CNPJ *</label>
             <input type="text" class="form-control" name="cpfCnpj" value="{{ $prestador->cpfCnpj ?? null}}" required>
+            @include('partial.form-error', ['nome' => 'cpfCnpj'])
         </div>
     </div>
     <div class="col-md-6">
         <div class="form-group">
             <label for="email">E-mail *</label>
             <input type="email" class="form-control" name="email" value="{{ $prestador->email ?? null}}" required>
+            @include('partial.form-error', ['nome' => 'email'])
         </div>
     </div>
 </div>
@@ -18,12 +20,14 @@
         <div class="form-group">
             <label for="telefone[ddd]">Código de área *</label>
             <input type="number" class="form-control cnpj" name="telefone[ddd]" value="{{ $prestador->telefone->ddd ?? null}}" required>
+            @include('partial.form-error', ['nome' => 'telefone.ddd'])
         </div>
     </div>
     <div class="col-md-6">
         <div class="form-group">
             <label for="telefone[numero]">Número do telefone *</label>
             <input type="number" class="form-control" name="telefone[numero]" value="{{ $prestador->telefone->numero ?? null}}" required>
+            @include('partial.form-error', ['nome' => 'telefone.numero'])
         </div>
     </div>
 </div>
@@ -33,12 +37,14 @@
         <div class="form-group">
             <label for="incentivadorCultural">Icentivador cultural</label>
             <input type="text" class="form-control" name="incentivadorCultural" value="{{ $prestador->incentivadorCultural ?? null}}">
+            @include('partial.form-error', ['nome' => 'incentivadorCultural'])
         </div>
     </div>
     <div class="col-md-6">
         <div class="form-group">
             <label for="incentivoFiscal">Icentivado fiscal</label>
             <input type="text" class="form-control" name="incentivoFiscal" value="{{ $prestador->incentivoFiscal ?? null}}">
+            @include('partial.form-error', ['nome' => 'incentivoFiscal'])
         </div>
     </div>
 </div>
@@ -48,12 +54,14 @@
         <div class="form-group">
             <label for="inscricaoMunicipal">Inscrição municipal *</label>
             <input type="text" class="form-control" name="inscricaoMunicipal" value="{{ $prestador->inscricaoMunicipal ?? null}}" required>
+            @include('partial.form-error', ['nome' => 'inscricaoMunicipal'])
         </div>
     </div>
     <div class="col-md-6">
         <div class="form-group">
             <label for="nomeFantasia">Nome fantasia</label>
             <input type="text" class="form-control" name="nomeFantasia" value="{{ $prestador->nomeFantasia ?? null}}">
+            @include('partial.form-error', ['nome' => 'nomeFantasia'])
         </div>
     </div>
 </div>
@@ -63,12 +71,14 @@
         <div class="form-group">
             <label for="razaoSocial">Razão social *</label>
             <input type="text" class="form-control" name="razaoSocial" value="{{ $prestador->razaoSocial ?? null}}" required>
+            @include('partial.form-error', ['nome' => 'razaoSocial'])
         </div>
     </div>
     <div class="col-md-6">
         <div class="form-group">
             <label for="regimeTributario">Regime tributário</label>
             <input type="text" class="form-control" name="regimeTributario" value="{{ $prestador->regimeTributario ?? null}}">
+            @include('partial.form-error', ['nome' => 'regimeTributario'])
         </div>
     </div>
 </div>
@@ -78,12 +88,14 @@
         <div class="form-group">
             <label for="regimeTributarioEspecial">Regime tributário especial</label>
             <input type="text" class="form-control" name="regimeTributarioEspecial" value="{{ $prestador->regimeTributarioEspecial ?? null}}">
+            @include('partial.form-error', ['nome' => 'regimeTributarioEspecial'])
         </div>
     </div>
     <div class="col-md-6">
         <div class="form-group">
             <label for="simplesNacional">Simples *</label>
             <input type="text" class="form-control" name="simplesNacional" value="{{ $prestador->simplesNacional ?? null}}" required>
+            @include('partial.form-error', ['nome' => 'simplesNacional'])
         </div>
     </div>
 </div>
