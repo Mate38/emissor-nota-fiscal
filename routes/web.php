@@ -19,5 +19,5 @@ Route::get('/', function () {
 
 Route::get('/prestador/lista', 'PrestadorController@lista')->name('prestador.lista');
 Route::get('/prestador/cadastrar/{cpfCnpj?}/{index?}', 'PrestadorController@cadastrar')->name('prestador.cadastrar');
-
 Route::post('/prestador/salvar/{cpfCnpj?}/{index?}', 'PrestadorController@salvar')->name('prestador.salvar');
+Route::get('/prestador/visualizar/{cpfCnpj?}', 'PrestadorController@visualizar')->name('prestador.visualizar');

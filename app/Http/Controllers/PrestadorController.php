@@ -57,4 +57,15 @@ class PrestadorController extends Controller
         return view('prestador.lista', compact('dados', 'index'));
     }
 
+    public function visualizar($cpfCnpj)
+    {
+        $prestador = PrestadorService::getPrestador($cpfCnpj);
+        if(isset($prestador->statusCode) && $prestador->statusCode != 200 && $prestador->statusCode != 201) {
+            return redirect()->back()->with('error', $prestador->body->error->message);
+        }
+        $prestador = data_get((array) $prestador, 'body');
+
+        return response()->json(view('prestador.partial.dados-visualizacao', compact('prestador'))->render());
+    }
+
 }

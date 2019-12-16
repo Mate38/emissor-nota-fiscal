@@ -31,12 +31,22 @@
 
     </div>
 </div>
+
+@include('prestador.partial.modal-visualizacao-dados')
 @endsection
 
 @section('scripts')
 <script>
 
+    function modalDados(cpfCnpj) {
+        $.ajax({url: '{!! route('prestador.visualizar') !!}/'+cpfCnpj, success: function(result){
+            $('#visualizacaoDadosModal').modal('show');
+            $(".conteudo-modal").html(result);
+        }});
+    }
+
     function limpaCpfCnpj(valor){
+        valor = valor.replace(".", "");
         valor = valor.replace(".", "");
         valor = valor.replace("-", "");
         valor = valor.replace("/", "");
@@ -56,7 +66,7 @@
                 + '<td>'+nomeFantasia+'</td>'
                 + '<td>'+cpfCnpj+'</td>'
                 + '<td>'
-                    + '<a href="javascript:;" class="btn btn-sm" title="Vizualizar" data-toggle="tooltip" data-placement="top">'
+                    + '<a href="javascript:;" class="btn btn-sm" title="Vizualizar" data-toggle="tooltip" data-placement="top" onclick=(modalDados('+limpaCpfCnpj(cpfCnpj)+'))>'
                         + '<i class="fas fa-eye"></i>'
                     + '</a>'
                     + '<a href="{{ route('prestador.cadastrar') }}/'+limpaCpfCnpj(cpfCnpj)+'/'+i+'" class="btn btn-sm" title="Editar" data-toggle="tooltip" data-placement="top">'
