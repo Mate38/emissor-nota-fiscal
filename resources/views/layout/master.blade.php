@@ -10,9 +10,9 @@
             @yield('title')
         </title>
 
-        @include('layout.partial.styles')
+        @include('layout.partial.head-styles')
         
-        @include('layout.partial.scripts')
+        @include('layout.partial.head-scripts')
 
     </head>
     <body>
@@ -31,6 +31,8 @@
         @yield('styles')
 
         @yield('scripts')
+
+        @include('layout.partial.body-scripts')
 
     </body>
 </html>

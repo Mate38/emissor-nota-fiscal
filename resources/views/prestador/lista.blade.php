@@ -83,9 +83,7 @@
     @endif
 
     $(document).ready(function(){
-        // $('[data-toggle="tooltip"]').tooltip() 
-
-        if(contador = localStorage.getItem('contador')) {
+         if(contador = localStorage.getItem('contador')) {
             for(i = 1; i < contador; i++) {
                 dados = $.parseJSON(localStorage.getItem(i.toString()))
                 if(dados) {
