@@ -36,6 +36,13 @@
 @section('scripts')
 <script>
 
+    function limpaCpfCnpj(valor){
+        valor = valor.replace(".", "");
+        valor = valor.replace("-", "");
+        valor = valor.replace("/", "");
+        return valor;
+    }
+
     function remover(chave) {
         localStorage.removeItem(chave)
         $('#'+chave).remove()
@@ -52,7 +59,7 @@
                     + '<a href="javascript:;" class="btn btn-sm" title="Vizualizar" data-toggle="tooltip" data-placement="top">'
                         + '<i class="fas fa-eye"></i>'
                     + '</a>'
-                    + '<a href="{{ route('prestador.cadastrar') }}/'+cpfCnpj+'/'+i+'" class="btn btn-sm" title="Editar" data-toggle="tooltip" data-placement="top">'
+                    + '<a href="{{ route('prestador.cadastrar') }}/'+limpaCpfCnpj(cpfCnpj)+'/'+i+'" class="btn btn-sm" title="Editar" data-toggle="tooltip" data-placement="top">'
                         + '<i class="fas fa-user-edit"></i>'
                     + '</a>'
                     + '<a href="javascript:;" onclick="remover('+i+')" class="btn btn-sm" title="Excluir" data-toggle="tooltip" data-placement="top">'

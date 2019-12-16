@@ -24,10 +24,10 @@ class PrestadorRequest extends FormRequest
     public function rules()
     {
         $rules = [
-            'cpfCnpj' => ['required', 'max:14', 'min:11'],
+            'cpfCnpj' => ['required', 'max:18', 'min:11'],
             'email' => ['required', 'email'],
-            'telefone.ddd' => ['required', 'max:2', 'min:2'],
-            'telefone.numero' => ['required', 'max:9', 'min:8'],
+            'telefone.ddd' => ['required', 'max:4', 'min:2'],
+            'telefone.numero' => ['required', 'max:10', 'min:8'],
             'razaoSocial' => ['required'],
             'simplesNacional' => ['required'],
             'endereco.tipoLogradouro' => ['required'],
@@ -37,7 +37,7 @@ class PrestadorRequest extends FormRequest
             'endereco.bairro' => ['required'],
             'endereco.codigoCidade' => ['required', 'max:7', 'min:7'],
             'endereco.estado' => ['required'],
-            'endereco.cep' => ['required'],
+            'endereco.cep' => ['required', 'max:9', 'min:9'],
         ];
 
         return $rules;

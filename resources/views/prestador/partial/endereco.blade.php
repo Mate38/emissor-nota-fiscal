@@ -52,8 +52,8 @@
     </div>
     <div class="col-md-6">
         <div class="form-group">
-            <label for="endereco[bairro]">Bairro</label>
-            <input type="text" class="form-control" name="endereco[bairro]" value="{{ $prestador->endereco->bairro ?? null}}">
+            <label for="endereco[bairro]">Bairro *</label>
+            <input type="text" class="form-control" name="endereco[bairro]" value="{{ $prestador->endereco->bairro ?? null}}" required>
             @include('partial.form-error', ['nome' => 'endereco.bairro'])
         </div>
     </div>
