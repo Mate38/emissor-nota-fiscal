@@ -4,9 +4,9 @@ Atualmente com funções de cadastro, edição, visualização e remoção de pr
 
 ## Dependências
 
-Possui como dependência o Guzzle, o qual reques o cacart.pem configurado no servidor do php.
+O sistema utiliza o Guzzle, que utiliza o curl, que necessita do cacart.pem configurado no servidor do php.
 
-Para tal no arquivo php.ini adicione o endereço do certificado. (Uma cópia do certificado pode ser encontrado dentro do projeto em ```storage/certs```)
+Assim, no arquivo php.ini adicione o endereço do certificado. (Uma cópia do certificado pode ser encontrado dentro do projeto em ```storage/certs```)
 
 ## Configuração
 
