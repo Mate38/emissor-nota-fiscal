@@ -24,6 +24,6 @@
     },
     "dependencies": {
         "jquery-mask-plugin": "^1.14.16",
-        "jquery-validation": "^1.19.1"
+        "jquery-validation": "^1.19.4"
     }
 }
